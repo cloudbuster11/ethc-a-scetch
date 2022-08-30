@@ -1,4 +1,6 @@
 const container = document.getElementById("container");
+const resetButton = document.getElementById("resetButton");
+const div = document.querySelectorAll("div");
 
 function makeRows(rows, cols) {
   container.style.setProperty("--grid-rows", rows);
@@ -6,7 +8,7 @@ function makeRows(rows, cols) {
   for (c = 0; c < rows * cols; c++) {
     let cell = document.createElement("div");
     // cell.innerText = c + 1;
-    container.appendChild(cell).className = `${c + 1}`;
+    container.appendChild(cell).className = "div";
   }
 }
 
@@ -18,3 +20,14 @@ container.addEventListener("click", function (e) {
     e.target.classList.add("active");
   }
 });
+
+function reset() {
+  while (container.firstChild) {
+    container.removeChild(container.firstChild);
+  }
+  makeRows(16, 16);
+}
+
+resetButton.addEventListener("click", reset);
+
+console.log(div);
