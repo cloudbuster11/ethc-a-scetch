@@ -1,4 +1,24 @@
+* {
+  padding: 0px;
+  margin: 0px;
+}
+
+:root {
+  --grid-cols: 1;
+  --grid-rows: 1;
+}
+
+#container {
+  width: 600px;
+  display: grid;
+  grid-gap: 1em;
+  grid-template-rows: repeat(var(--grid-rows), 1fr);
+  grid-template-columns: repeat(var(--grid-cols), 1fr);
+}
+
 div {
-  background-color: aqua;
-  border: 1px solid #fff;
+  border: 1px solid #000;
+  height: 20px;
+  width: 20px;
+  text-align: center;
 }
